@@ -1,0 +1,13 @@
+jaffle_shop: # this needs to match the profile in your dbt_project.yml file
+    target: dev
+    outputs:
+        dev:
+            type: bigquery
+            method: service-account
+            keyfile: /Users/braxton/.dbt/opportune-bot-427201-d8-a1ece38b305a.json # replace this with the full path to your keyfile
+            project: opportune-bot-427201-d8 # Replace this with your project id
+            dataset: jaffle_shop # Replace this with dbt_your_name, e.g. dbt_bilbo
+            threads: 1
+            timeout_seconds: 300
+            location: US
+            priority: interactive
